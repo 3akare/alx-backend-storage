@@ -4,7 +4,7 @@ Cache class module
 '''
 import redis
 import uuid
-from typing import Union, Callable,Any
+from typing import Union, Callable, Any
 from functools import wraps
 
 
@@ -15,6 +15,10 @@ def count_calls(func: Callable) -> Callable:
 
     @wraps(func)
     def wrapper(self, *args, **kwargs) -> Any:
+        '''
+        invokes the given method
+        '''
+
         if isinstance(self._redis, redis.Redis):
             self._redis.incr(func.__qualname__)
         return func(self, *args, **kwargs)
