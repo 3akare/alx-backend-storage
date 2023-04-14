@@ -6,9 +6,13 @@ insert a new document into a collection
 import pymongo
 client = pymongo.MongoClient()
 
+
 def insert_school(mongo_collection, **kwargs):
+    '''
+    insert_school function
+    '''
     obj = {}
     for k, v in kwargs.items():
-        diction[k] = v
+        obj[k] = v
     mongo_collection.insert_one(obj)
-    return mongo_collection_collection.find(obj).id
+    return mongo_collection.find(obj).id
