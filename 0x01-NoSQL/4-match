@@ -1,12 +1,9 @@
 // Lists of all documents with the name = "Holberton school" in the collection
 
-db.school.updateMany(
+db.school.aggregate([
     {
-        name: "Holberton school"
-    }, 
-    {
-        $set: {
-            address: "972 Mission street"
+        $match: {
+            name: "Holberton school"
         }
     }
-)
+])
