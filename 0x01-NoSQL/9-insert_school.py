@@ -9,6 +9,6 @@ client = pymongo.MongoClient()
 def insert_school(mongo_collection, **kwargs):
     obj = {}
     for k, v in kwargs.items():
-        diction[k] = v
-    mongo_collection.insert_one(obj)
-    return mongo_collection_collection.find(obj).id
+        obj[k] = v
+    _id = mongo_collection.insert_one(obj).inserted_id
+    return _id
