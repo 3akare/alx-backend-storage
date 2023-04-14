@@ -3,12 +3,15 @@
 db.school.aggregate([
     {
         $match: {
-            name: 'Holberton school'
+            name: "Holberton school"
         }
     },
     {
         $set: {
-            address: '972 Mission street'
+            address: "972 Mission street"
         }
+    },
+    {
+        $out: "school"
     }
 ])
