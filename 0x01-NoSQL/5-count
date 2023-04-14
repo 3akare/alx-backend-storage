@@ -1,4 +1,4 @@
 // Returns the number of documents in the school collection
-// db.school.count() is deprected, so I'd use db.school.countDocuments()
-// which provides a better performance
+// db.school.count() is deprected, so db.school.countDocuments() would provide better performance
+
 db.school.count()
