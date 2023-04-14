@@ -8,20 +8,20 @@ from typing import Union, Callable, Any
 from functools import wraps
 
 
-def count_calls(func: Callable) -> Callable:
+def count_calls(method: Callable) -> Callable:
     '''
     Counts the number of times a method of clas Cache is called
     '''
 
-    @wraps(func)
+    @wraps(method)
     def wrapper(self, *args, **kwargs) -> Any:
         '''
         invokes the given method
         '''
 
         if isinstance(self._redis, redis.Redis):
-            self._redis.incr(func.__qualname__)
-        return func(self, *args, **kwargs)
+            self._redis.incr(method.__qualname__)
+        return method(self, *args, **kwargs)
     return wrapper
 
 
