@@ -16,4 +16,4 @@ def update_topics(mongo_collection, name, topics):
             'topics': topics
         }
     }
-    mongo_collection.update_one({'name': name}, update)
+    mongo_collection.update_many({'name': name}, update)
