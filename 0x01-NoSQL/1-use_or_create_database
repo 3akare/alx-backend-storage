@@ -1,1 +1,2 @@
+// Create and use a database name my_db in mongodb
 use my_db
